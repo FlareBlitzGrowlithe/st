@@ -1,7 +1,6 @@
 {
     "name": "Mobile App Development Technologies",
     "short_name": "Presentation",
-    "description": "This is a short task for building a presentation to compare between Cordova, Flutter and React Native..",
     "icons": [
         {
             "src": "icon192.png",
@@ -16,6 +15,6 @@
     ],
     "start_url": "./index.html",
     "display": "standalone",
-    "background_color": "#ffffff",
-    "theme_color": "#007bff"
+    "theme_color": "#2196F3",
+    "background_color": "#2196F3"
 }
