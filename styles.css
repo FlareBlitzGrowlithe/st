@@ -1,0 +1,162 @@
+body {
+	background-color: white;
+	font-family: 'Open Sans', sans-serif;
+	margin: -1rem;
+}
+h1, h2{
+	font-family: 'Abril Fatface', cursive;
+}
+
+h1 {
+	font-size: 3rem;
+	border-radius: 0.5rem;
+	border-color: #333;
+}
+
+p, a , li{
+    font-family: 'Cormorant Garamond', serif;
+	font-size: 1.2rem;
+}
+header {
+	text-align: center;
+	padding: 5rem;
+	color: #eee;
+    background-image: url('./pg.jpg');
+	background-size: cover;
+	background-position: center;
+	filter: blur(1px);
+}
+
+main {
+	max-width: 65%;
+	margin: 0 auto;
+	padding: 1rem;
+}
+footer {
+	justify-content: center;
+	margin-top: 2rem;
+	padding: 2rem;
+	text-align: center;
+	color: #eee;
+	background-color: #333;
+}
+label {
+	display: block;
+}
+
+select {
+	display: block;
+	margin-bottom: 2rem;
+	
+}
+
+section {
+	margin-top: 2rem;
+}
+
+
+.sidebar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 10rem;
+	background-color: #f1f1f1;
+	opacity: 0.8;
+	transform: translateX(-100%);
+	transition: transform 0.3s ease-in-out;
+	z-index: 1;
+}
+
+#sidebar ul {
+	list-style: none;
+	margin-top: 4rem;
+	margin-left: 1.5rem;
+	padding: 0px;
+}
+
+#sidebar ul li {
+	margin-top: 1rem;
+}
+
+#sidebar ul li:hover {
+	background-color: #2196F3;
+	color: #FFFFFF;
+}
+
+.sidebar-toggle {
+	position: fixed;
+	top: 1rem;
+	left: 1rem;
+	font-size: 1.5rem;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	z-index: 2;
+}
+
+.sidebar-toggle:focus {
+	outline: none;
+}
+
+.sidebar-toggle:hover {
+	color: #2196F3;
+}
+
+.sidebar-open {
+	transform: translateX(0%);
+}
+
+.content {
+	margin-top: 0rem;
+}
+
+a {
+	color: #1a73e8;
+	text-decoration: none;
+	display: inline-block;
+	padding: 5px 0px;
+	border-radius: 5px;
+	transition: background-color 0.2s ease;
+}
+
+a:hover {
+	text-decoration: underline;
+	background-color: #eee;
+}
+
+a:active {
+	background-color: #ddd;
+}
+
+/* Media queries for responsive design */
+@media only screen and (max-width: 768px) {
+	main {
+		padding: 10px;
+	}
+
+	.sidebar {
+		width: 100%;
+		height: 6rem;
+		transform: translateY(-100%);
+	}
+
+	.content {
+		margin-left: 0;
+	}
+
+	.sidebar-open {
+		transform: translateX(0%);
+	}
+
+	#sidebar ul {
+		list-style: none;
+		margin-top: 0rem;
+		margin-left: 3rem;
+		padding: 0px;
+	}
+
+	#sidebar ul li {
+		margin-left: 1rem;
+	}
+}
