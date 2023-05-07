@@ -1,36 +1,33 @@
-const CACHE_NAME = 'my-app-cache';
+var CACHE_NAME = 'my-pwa-example-cache-v1';
+var urlsToCache = [
+    './',
+    'index.html',
+    'styles.css',
+    'icon192.png',
+    'icon512.png',
+    'pg.jpg',
+];
 
-self.addEventListener('install', event => {
+self.addEventListener('install', function (event) {
+    // Perform install steps
     event.waitUntil(
-        caches.open(CACHE_NAME).then(cache => {
-            return cache.addAll([
-                '/',
-                '/index.html',
-                '/style.css',
-                'icon192.png',
-                "icon512.png"
-            ]);
-        })
+        caches.open(CACHE_NAME)
+            .then(function (cache) {
+                console.log('Opened cache');
+                return cache.addAll(urlsToCache);
+            })
     );
 });
 
-self.addEventListener('activate', event => {
-    event.waitUntil(
-        caches.keys().then(keyList => {
-            return Promise.all(keyList.map(key => {
-                if (key !== CACHE_NAME) {
-                    return caches.delete(key);
-                }
-            }));
-        })
-    );
-});
-
-// Serve cached assets when available
-self.addEventListener('fetch', event => {
+self.addEventListener('fetch', function (event) {
     event.respondWith(
-        caches.match(event.request).then(response => {
-            return response || fetch(event.request);
-        })
+        caches.match(event.request)
+            .then(function (response) {
+                // Cache hit - return response
+                if (response) {
+                    return response;
+                }
+                return fetch(event.request);
+            })
     );
 });
